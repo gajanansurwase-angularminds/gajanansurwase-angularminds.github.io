@@ -50,7 +50,6 @@ const CustomerForm = () => {
     };
 
     const onSubmit = (data) => {
-        alert("in onSubmit " + JSON.stringify(data));
 
         const formData = new FormData();
         formData.append('firstName', data.firstName);
