@@ -1,1 +1,0 @@
-# gajanansurwase-angularminds.github.io
