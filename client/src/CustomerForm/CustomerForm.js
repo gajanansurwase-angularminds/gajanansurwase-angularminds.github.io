@@ -338,7 +338,7 @@ const CustomerForm = () => {
                                 <div >
                                     <Button data-testid="custformsubmitbtn-1" className="btn btn-primary btn-large" type="submit" onClick={handleSubmit(onSubmit)}>Submit</Button>
                                     &nbsp;&nbsp;&nbsp;
-                                    <EmailShareButton subject="user Information" size={42} round={true} body={"https://github.com/gajanansurwase-angularminds/Customer-details-mern-project.git"}>
+                                    <EmailShareButton subject="user Information" size={42} round={true} body={"https://gajanansurwase-angularminds.github.io/"}>
                                         {/* <Button data-testid="custformsubmitbtn-1" className="btn btn-primary btn-large" type="submit" onClick={handleSubmit(onShare)}>Share</Button> */}
                                         <EmailIcon size={42} round={true}></EmailIcon>
                                     </EmailShareButton>
