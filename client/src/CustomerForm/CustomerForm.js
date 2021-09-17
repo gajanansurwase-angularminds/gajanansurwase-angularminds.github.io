@@ -342,7 +342,6 @@ const CustomerForm = () => {
                                         {/* <Button data-testid="custformsubmitbtn-1" className="btn btn-primary btn-large" type="submit" onClick={handleSubmit(onShare)}>Share</Button> */}
                                         <EmailIcon size={42} round={true}></EmailIcon>
                                     </EmailShareButton>
-                                    {/* <a href="mailto:gsurwase274@gmail.com">LinkedIn handle</a> */}
                                 </div>
                             </Card.Footer>
 
