@@ -1,6 +1,6 @@
 {
   "name": "client",
-  "homepage": "https://gajanansurwase-angularminds.github.io/gajanansurwase-angularminds.github.io",
+  "homepage": "https://gajanansurwase-angularminds/gajanansurwase-angularminds.github.io",
   "version": "0.1.0",
   "private": false,
   "proxy": "http://localhost:5000",
