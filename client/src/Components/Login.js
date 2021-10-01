@@ -4,7 +4,7 @@ import { Button, Table, Modal, Card, ListGroup, Form } from 'react-bootstrap';
 import axios from 'axios';
 import { BrowserRouter as Router, Route, Redirect, Link, useHistory, withRouter } from "react-router-dom"
 
-function LoginUser() {
+function Login() {
     let history = useHistory();
 
     const [user, setUser] = useState({
@@ -57,7 +57,7 @@ function LoginUser() {
     }
 
     return (
-        <div className="container" style={{ width: "40%", paddingTop: "20px" }}>
+        <div className="container" style={{ width: "40%", paddingTop: "20px" }} data-testid="login-1">
 
             <Card>
                 <Card.Body>
@@ -74,7 +74,7 @@ function LoginUser() {
                             <Form.Control type="password" name="userPassword" placeholder="Enter Password" value={user.userPassword} onChange={handleChange} />
                         </Form.Group>
 
-                        <Button variant="primary" type="submit" onClick={userLogin}>
+                        <Button variant="primary" type="submit" onClick={userLogin} data-testid="loginbtn-1">
                             LogIn
                         </Button>
                     </Form>
@@ -102,7 +102,7 @@ function LoginUser() {
                     <h5>Please enter email or password</h5>
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button variant="primary" onClick={closeErrMsg}>
+                    <Button variant="primary" onClick={closeErrMsg} data-testid="loginbtn-1">
                         Close
                     </Button>
                 </Modal.Footer>
@@ -112,4 +112,4 @@ function LoginUser() {
 
 }
 
-export default LoginUser;
+export default Login;

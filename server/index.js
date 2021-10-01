@@ -7,6 +7,7 @@ const PostQuestions = require('./models/postQuestions.js');
 const NewUser = require('./models/newUser.js');
 const postRoutes = require('./routes/posts.js');
 const fs = require('fs');
+const { check, validationResult } = require('express-validator');
 
 const app = express();
 
@@ -140,52 +141,64 @@ const User = new mongoose.model("User", userSchema)
 
 app.post('/register', (req, res) => {
     // console.log(req.body);
-    const { userName, userEmail, userPassword } = req.body
-    User.findOne({ userEmail: userEmail }, (err, user) => {
-        if (user) {
-            res.send({ message: "user already present" })
-        }
-        else {
-            const user = new User({
-                userName,
-                userEmail,
-                userPassword
-            })
-            user.save(err => {
-                if (err) {
-                    res.send(err)
-                }
-                else {
-                    res.send({ message: "data saved successfully" })
-                }
-            })
-        }
-    })
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+        res.json(errors)
+    }
+    else {
+        const { userName, userEmail, userPassword } = req.body
+        User.findOne({ userEmail: userEmail }, (err, user) => {
+            if (user) {
+                res.send({ message: "user already present" })
+            }
+            else {
+                const user = new User({
+                    userName,
+                    userEmail,
+                    userPassword
+                })
+                user.save(err => {
+                    if (err) {
+                        res.send(err)
+                    }
+                    else {
+                        res.send({ message: "data saved successfully" })
+                    }
+                })
+            }
+        })
+    }
 
 })
 
 app.post('/login', (req, res) => {
-    const { userEmail, userPassword } = req.body
-    // console.log("Request " + JSON.stringify(req.body));
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+        res.json(errors)
+    }
+    else {
+        const { userEmail, userPassword } = req.body
+        // console.log("Request " + JSON.stringify(req.body));
 
-    User.findOne({ userEmail: userEmail }, (err, user) => {
-        console.log(user);
+        User.findOne({ userEmail: userEmail }, (err, user) => {
+            console.log(user);
 
-        if (user) {
-            if (userPassword === user.userPassword) {
+            if (user) {
+                if (userPassword === user.userPassword) {
 
-                res.send({ message: "Login Successful", user })
+                    res.send({ message: "Login Successful", user })
+                }
+                else {
+
+                    res.send({ message: "password did not match" })
+                }
             }
             else {
 
-                res.send({ message: "password did not match" })
+                res.send({ message: "user not found" })
             }
-        }
-        else {
-
-            res.send({ message: "user not found" })
-        }
-    })
+        })
+    }
 
 })
 

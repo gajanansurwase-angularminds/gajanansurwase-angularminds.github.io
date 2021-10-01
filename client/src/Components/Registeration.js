@@ -54,7 +54,7 @@ function RegistrationForm() {
     }
 
     return (
-        <div className="container" style={{ width: "40%", paddingTop: "20px" }}>
+        <div className="container" style={{ width: "40%", paddingTop: "20px" }} data-testid="register-1">
             <Card>
                 <Card.Body>
                     <Card.Title>User Registration</Card.Title>
@@ -74,7 +74,7 @@ function RegistrationForm() {
                             <Form.Control type="password" name="userPassword" placeholder="Password" value={user.userPassword} onChange={handleChange} />
                         </Form.Group>
 
-                        <Button variant="primary" type="submit" onClick={saveData}>
+                        <Button variant="primary" type="submit" onClick={saveData} data-testid="registerbtn-1">
                             Register
                         </Button>
                     </Form>

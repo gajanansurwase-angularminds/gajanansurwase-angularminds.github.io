@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/styles';
 import Paper from '@material-ui/core/Paper';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
-import { Link } from 'react-router-dom'
+import { Link,Router } from 'react-router-dom'
 
 const useStyles = makeStyles({
     roots: {
@@ -34,9 +34,9 @@ function Centertabs() {
                 indicatorColor="primary"
                 centered
             >
-                <Link to="/GoogleFrom"><Tab className={classes.tab} label="Questions"></Tab></Link>
+                <a href="/GoogleFrom"><Tab className={classes.tab} label="Questions"></Tab></a>
 
-                <Link to="/GoogleQues"><Tab className={classes.tab} label="Responses"> </Tab></Link>
+                <a href="/GoogleQues"><Tab className={classes.tab} label="Responses"> </Tab></a>
             </Tabs>
         </Paper>
     );

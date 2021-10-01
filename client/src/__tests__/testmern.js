@@ -1,6 +1,10 @@
 import { render, screen, cleanup, fireEvent } from '@testing-library/react';
 import CustomerTable from "../CustomerTable/CustomerTable";
 import CustomerForm from "../CustomerForm/CustomerForm";
+import Registration from "../Components/Registeration";
+import Login from "../Components/Login";
+import GoogleForm from '../Components/GoogleForm';
+
 
 afterEach(() => {
     cleanup();
@@ -86,6 +90,50 @@ test("input type file should present", () => {
     const custformbtnElement = screen.getByTestId('inputtype-1');
     expect(custformbtnElement).toBeInTheDocument();
 });
+
+//------registration form ------------------
+
+test('should render registration component', () => {
+    render(<Registration />);
+    const registrationElement = screen.getByTestId('register-1');
+    expect(registrationElement).toBeInTheDocument();
+
+})
+
+test('should render register button', () => {
+    render(<Registration />);
+    const registrationElement = screen.getByTestId('registerbtn-1');
+    expect(registrationElement).toBeInTheDocument();
+
+})
+
+
+//--------------login-------------------------------
+
+
+test('should render Login component', () => {
+    render(<Login />);
+    const loginElement = screen.getByTestId('login-1');
+    expect(loginElement).toBeInTheDocument();
+
+})
+
+test('should render Login Button', () => {
+    render(<Login />);
+    const loginbtnElement = screen.getByTestId('loginbtn-1');
+    expect(loginbtnElement).toBeInTheDocument();
+
+})
+
+//---------google form-----------------------
+
+test('should render google form', () => {
+    render(<GoogleForm />);
+    const googleformElement = screen.getByTestId('googleform-1');
+    expect(googleformElement).toBeInTheDocument();
+
+})
+
 
 
 

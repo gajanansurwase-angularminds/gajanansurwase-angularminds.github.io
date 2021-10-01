@@ -261,7 +261,7 @@ function GoogleForm() {
     }
 
     return (
-        <div className="question_form">
+        <div className="question_form" data-testid="googleform-1">
             <br></br>
             <Centeredtabs />
             <div className="section">

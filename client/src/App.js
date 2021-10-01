@@ -1,8 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
-import CustomerForm from "./CustomerForm/CustomerForm";
-import CustomerTable from "./CustomerTable/CustomerTable";
-import CustomerDetails from "./CustomerDetails/CustomerDetails";
+// import CustomerForm from "./CustomerForm/CustomerForm";
+// import CustomerTable from "./CustomerTable/CustomerTable";
+// import CustomerDetails from "./CustomerDetails/CustomerDetails";
 import GoogleFrom from "./Components/GoogleForm";
 import Centeredtabs from "./Components/Tabs";
 import GoogleQues from "./Components/GoogleQues";
